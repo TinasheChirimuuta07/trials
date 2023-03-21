@@ -33,7 +33,10 @@ private LocalDateTime createddate;
     @Column(name = "narration")
  private String narration ;
     @Column(name = "creator")
- private String createdby;
+ private String createdBy;
+
+    @Column(name = "donebY")
+    private String doneBy;
 
 
 
