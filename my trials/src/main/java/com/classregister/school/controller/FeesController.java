@@ -16,6 +16,7 @@ public class FeesController {
     public ResponseEntity<FeesresponseDTO> savefees( @RequestBody  FeesrequestDTO feesrequestDTO){
         return ResponseEntity.ok(feesServiceImplemantation.save(feesrequestDTO)) ;
 
+
     }
     @PutMapping("/update_fees/{id}")
     public ResponseEntity<FeesresponseDTO> update (@PathVariable Integer id, @RequestBody FeesrequestDTO feesrequestDTO  ){

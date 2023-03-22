@@ -34,6 +34,8 @@ public class Invoice {
     private String description;
     @Column(name = "invoice_number")
     private String invoiceNumber;
+
+    @Column(name = "classs")
     private String classs;
     @Column(name = "created_by")
     private String createdBy;
@@ -50,10 +52,13 @@ public class Invoice {
     @PrePersist
     void init() {
         createdDate = LocalDateTime.now();
+        invoiceDate = LocalDateTime.now();
     }
 
     @PreUpdate
     void preUpdate() {
         updatedDate = LocalDateTime.now();
+
     }
+
 }

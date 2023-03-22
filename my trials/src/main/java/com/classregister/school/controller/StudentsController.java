@@ -6,8 +6,6 @@ import com.classregister.school.services.StudentsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 public class StudentsController {
   @Autowired
@@ -24,6 +22,8 @@ public class StudentsController {
 
   @GetMapping("/get")
   public String get (){return "my name ";}
+
+
   @GetMapping("/register/{institution_id}/{classId}")
   public Register getRegister (@PathVariable("institution_id") Integer classid , @PathVariable("classId") Integer institution_id ){
     return studentsservice.getRegister( classid,institution_id);

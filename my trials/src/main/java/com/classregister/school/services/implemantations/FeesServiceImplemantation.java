@@ -22,7 +22,7 @@ public class FeesServiceImplemantation implements FeesService {
     FeesRepository feesRepository ;
     @Override
     public FeesresponseDTO save(FeesrequestDTO feesrequestDTO) {
-        Fees  newfees = new Fees() ;
+        Fees newfees = new Fees() ;
         BeanUtils.copyProperties(feesrequestDTO,newfees);
      var savedfees=    feesRepository.save(newfees);
         FeesresponseDTO feesresponseDTO = new FeesresponseDTO();
@@ -45,7 +45,7 @@ public class FeesServiceImplemantation implements FeesService {
 
 
        }
-    //    Fees newfees = new Fees();
+
         BeanUtils.copyProperties(feesrequestDTO,fee);
         var saved = feesRepository.save(fee);
 

@@ -5,24 +5,23 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class FeesrequestDTO {
-
-    private Integer id;
-    private String name ;
-    private String surname;
-    private String institution;
-    private Integer fees;
-    private LocalDateTime createddate;
+Integer id ;
+    private String institutionId;
+    private String classId;
     private String currency;
-
-    private String narration ;
-
-    private String createdby;
-
+    private BigDecimal amount;
+    private Integer termId;
+    private LocalDateTime createdDate;
+    private LocalDateTime updatedDate;
+    private String createdBy;
+    private String narration;
+    private String status;
 
 }

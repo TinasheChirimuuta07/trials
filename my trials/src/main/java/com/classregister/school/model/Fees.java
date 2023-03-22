@@ -1,43 +1,56 @@
+
 package com.classregister.school.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+@RequiredArgsConstructor
+@Getter
+@Setter
 @Entity
-@Table(name ="Fees_table")
+@Table(name="fees_structure")
 public class Fees {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	private Integer id;
+	@Column(name="institution_id")
+	private String institutionId;
+	@Column(name="class_id")
+	private String classId;
 
-private Integer id;
+	@Column(name="currency")
+	private String currency;
 
-    @Column(name = "name")
-private String name ;
-    @Column(name = "surname")
-private String surname;
-    @Column(name = "Institution_name")
-private String institution;
-    @Column(name = "new_fees")
-private Integer fees;
-    @Column(name = "todays_date")
-private LocalDateTime createddate;
-    @Column(name = "currency_used")
- private String currency;
-    @Column(name = "narration")
- private String narration ;
-    @Column(name = "creator")
- private String createdBy;
+	@Column(name="amount")
+	private BigDecimal amount;
 
-    @Column(name = "donebY")
-    private String doneBy;
+	@Column(name="term_id")
+	private Integer termId;
+	@Column(name="created_date")
+	private LocalDateTime createdDate;
+	@Column(name="updated_date")
+	private LocalDateTime updatedDate;
+	@Column(name="createdBy")
+	private String createdBy;
+	@Column(name="narration")
+	private String narration;
+	private String status;
 
 
+	@PrePersist
+	void init(){
+	createdDate=LocalDateTime.now();
+	}
+@PreUpdate
+	void preUpdate(){
+		updatedDate=LocalDateTime.now();
+	}
 
 }
+

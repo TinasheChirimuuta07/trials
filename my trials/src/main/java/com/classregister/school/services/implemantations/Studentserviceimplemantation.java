@@ -1,28 +1,28 @@
 package com.classregister.school.services.implemantations;
 
-import com.classregister.school.model.Fees;
 import com.classregister.school.model.Register;
 import com.classregister.school.model.Student;
 import com.classregister.school.repository.FeesRepository;
 import com.classregister.school.repository.ResgisterRepository;
 import com.classregister.school.repository.StudentRepository;
 import com.classregister.school.services.StudentsService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 @Service
-public class Studentserviceimplemantation implements StudentsService {
-    @Autowired
-    private StudentRepository studentrepo;
+@RequiredArgsConstructor
+public class
+Studentserviceimplemantation implements StudentsService {
 
-    @Autowired
-    private ResgisterRepository resgisterRepository;
-    @Autowired
-    private FeesRepository feesRepository;
+    private  final StudentRepository studentrepo;
+
+
+    private final  ResgisterRepository resgisterRepository;
+
+    private  final FeesRepository feesRepository;
 
 
     @Override
@@ -47,7 +47,7 @@ public class Studentserviceimplemantation implements StudentsService {
             register.setStudentSurname(student.getStudentSurname());
             register.setStudentFirstName(student.getStudentFirstName());
             register.setClassId(student.getClasss());
-            register.setInstitutionId(student.getInstitution());
+          //  register.setInstitutionId(student.getInstitution());
             register.setAttendance(true);
             register.setDateTime(LocalDateTime.now());
             resgisterRepository.save(register);

@@ -6,7 +6,7 @@ spring:
     url: "jdbc:mysql://localhost:3306/trials?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Africa/Harare"
     username: 'root'
     password: 'root'
-    driverClassName: com.mysql.jdbc.Driver
+    driverClassName: com.mysql.cj.jdbc.Driver
 
 
   jpa:
